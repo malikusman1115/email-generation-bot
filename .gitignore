@@ -1,0 +1,29 @@
+# Ignore Python bytecode
+./__pycache__/
+accounts/__pycache__/
+django_project/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment files
+.env
+
+# Ignore virtual environment folder
+venv/
+
+# Ignore database files
+db.sqlite3
+
+# Ignore log files and request tracking files
+mymodule/request_ips.txt
+accounts/request_ips.txt
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
