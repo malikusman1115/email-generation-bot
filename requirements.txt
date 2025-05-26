@@ -82,3 +82,4 @@ PyPDF2
 django_filter
 pillow
 django-ckeditor==6.7.2
+security==1.3.1

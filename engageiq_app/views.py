@@ -29,6 +29,7 @@ from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from datetime import timedelta
 from django.utils.timezone import now
 from uuid import UUID
+from security import safe_requests
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -384,7 +385,7 @@ def assign_subscription(request):
         return JsonResponse({'error': 'No access token received'}, status=500)
 
     # Retrieve order details from PayPal
-    order_response = requests.get(
+    order_response = safe_requests.get(
         f'https://api-m.sandbox.paypal.com/v2/checkout/orders/{order_id}',
         headers={
             'Authorization': f'Bearer {access_token}',
