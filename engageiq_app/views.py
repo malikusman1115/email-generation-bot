@@ -373,8 +373,8 @@ def assign_subscription(request):
             'Authorization': 'Basic ' + base64.b64encode(f"{settings.PAYPAL_CLIENT_ID}:{settings.PAYPAL_SECRET}".encode()).decode(),
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        data={'grant_type': 'client_credentials'}
-    )
+        data={'grant_type': 'client_credentials'}, 
+    timeout=60)
     if auth_response.status_code != 200:
         return JsonResponse({'error': 'Failed to authenticate with PayPal'}, status=500)
 
@@ -389,8 +389,8 @@ def assign_subscription(request):
         headers={
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
-        }
-    )
+        }, 
+    timeout=60)
     if order_response.status_code != 200:
         return JsonResponse({'error': 'Failed to retrieve order details'}, status=500)
 
