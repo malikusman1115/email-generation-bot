@@ -12,7 +12,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-hfxxqcf6&v1dufa(x8cdiuwy3hdv!q2=_qc^(@g!^-b^*tf+g5'
-DEBUG = True
+DEBUG = False
 
 
 PAYPAL_MODE = 'sandbox'  # or 'live' for production
