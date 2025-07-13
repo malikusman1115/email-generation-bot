@@ -29,8 +29,6 @@ from engageiq_app.models import (
     APIUsage,
     SystemPrompt
 )
-
-import random
 import string
 import logging
 import json
@@ -39,13 +37,15 @@ from datetime import datetime
 from decimal import Decimal
 from rest_framework.permissions import AllowAny 
 import logging
+import secrets
+
 logger = logging.getLogger(__name__)
 
 User = get_user_model() 
 
 
 def generate_otp():
-    return ''.join(random.choices(string.digits, k=6))
+    return ''.join(secrets.SystemRandom().choices(string.digits, k=6))
 
 
 @csrf_exempt
