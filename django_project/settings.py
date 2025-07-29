@@ -279,3 +279,4 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+SESSION_COOKIE_SECURE = True
